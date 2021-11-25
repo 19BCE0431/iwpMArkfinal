@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Fav SUPER HERO</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="title">
+    <img src="imgs/marvel.png" alt="img" class="titleimg">
+    <h1>Bring your fav super hero home on your birthday</h1>
+  </div>
+  <div class="text">
+    <p>Welcome to a world contest, where you're given a chance to prove that you'r fav super hero wins the contest.</p>
+    <p>if you win this round, you're moved to round two, which of course is tough.</p>
+    <p>keep the code for you'r future reference</p>
+  </div>
+
+
+
+  <form class="form" action="index.html" method="post" name="marvelQuest" onsubmit="onsub()">
+    <fieldset>
+      <legend contenteditable="true">Your Details</legend>
+      <div>
+          <label>Name:</label>
+          <input type="text" name="name" autocomplete="off" id="name">
+          <span></span>
+      </div>
+      <div id="emailDiv">
+          <label>Email:</label>
+          <input type="text" name="email" autocomplete="off" id="email" onkeyup="validate()">
+          <span id="checkEmail"></span>
+      </div>
+      <div id="phoneDiv">
+        <label>Phone Number:</label>
+        <input type="text" name="phoneNumber" maxlength="10" placeholder="1234567890" id="phoneNumber" onkeyup="validate()">
+        <span id="checkPhone"></span>
+      </div>
+      <div id="countryDiv">
+        <label>Country code:</label>
+        <input type="text" title="Three letter country code" name="countryCode" id="countryCode" onkeyup="validate()">
+        <span id="checkCCode"></span>
+      </div>
+      <div>
+        <label>Birthday:</label>
+        <input type="date" name="birthday" id="birthday">
+        <span id="disBirthday"></span>
+      </div>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" name="checkbox" id="checked1">
+      <label style="display:inline">By here i'm confirming that i've given my own details and agreeing to the terms and conditions</label>
+    </div>
+
+
+    <fieldset id="favSupHero" disabled>
+      <legend contenteditable="true">Who is your fav suoer hero</legend>
+      <div>
+        <label>Fav super hero Name: </label>
+        <select>
+          <option value="ironman">IRONMAN</option>
+          <option value="cap" selected>CAP</option>
+          <option value="hulk">HULK</option>
+          <option value="widow">WIDOW</option>
+        </select>
+      </div>
+      <div>
+        <label >Super Power: </label>
+        <input type="text">
+      </div>
+      <div>
+        <label >Upload your image: (*pdf/doc)</label>
+        <input type="file" id="uploadFile">
+      </div>
+      <div>
+        <label >Fav Color:</label>
+        <input type="color" name="favcolor" value="#112031">
+      </div>
+      <div>
+        <label>How much you like your hero:</label>
+        <input type="range" min="0" max="10">
+      </div>
+      <div>
+        <label>Tell us about your hero: </label>
+        <textarea ></textarea>
+      </div>
+
+    </fieldset>
+
+    <fieldset id="finalIns" class="">
+      <legend>Final instructions</legend>
+      <div>
+        <label >HOW MANY SUBMISSIONS DONE?</label>
+        <input name="value1" type="number" placeholder="1-10" min="1" max="10" name="noOfSubmissions">
+
+      </div>
+      <div>
+        <label>Any suggestions?</label>
+        <textarea></textarea>
+      </div>
+
+    </fieldset>
+
+
+
+
+    <div class="submit"><button type="submit" id="submit">Submit</button></div>
+  </form>
+
+  <script src="index.js" charset="utf-8"></script>
+
+</body>
+
+</html>
