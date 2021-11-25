@@ -7,6 +7,7 @@ const ServiceModel = require('../models/ServiceModel');
 const ElectronicsModel = require('../models/ElectronicsModel');
 const CustomerModel = require('../models/CustomerModel');
 const UserModel = require("../models/UserModel");
+const ContactModel = require('../models/ContactModel');
 const sendEmail = require("../utils/mailer");
 
 // Set Image Storage
@@ -70,9 +71,18 @@ router.get('/home', function (req, res) {
 // GET Service Page
 router.get('/service', async function (req, res) {
 
-    let servicecars = await ServiceModel.find();
+    let feedbacks = await ServiceModel.find();
+    console.log(feedbacks);
+    res.render("admin/service.hbs", { list: feedbacks, layout: false });
+
+});
+
+// GET feedback Page
+router.get('/feedback', async function (req, res) {
+
+    let servicecars = await ContactModel.find();
     console.log(servicecars);
-    res.render("admin/service.hbs", { servicecars: servicecars, layout: false });
+    res.render("admin/contacts_list", { list: servicecars, layout: false });
 
 });
 

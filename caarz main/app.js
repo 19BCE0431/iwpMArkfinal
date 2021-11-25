@@ -11,9 +11,14 @@ const electricRouter = require('./routes/electric_index');
 const gasRouter = require('./routes/gas_index');
 const electronicsRouter = require('./routes/electronics_index');
 const servicesRouter = require('./routes/services');
+const teamRouter = require('./routes/team');
+
+const aboutRouter = require('./routes/about');
+const contactRouter = require('./routes/contact');
 const adminRouter = require('./routes/admin');
 var UserModel = require("./models/CustomerModel");
 var ServicesModel = require("./models/ServiceModel");
+var ContactModel = require("./models/ContactModel");
 const app = express();
 
 
@@ -73,7 +78,9 @@ app.use('/electric', electricRouter);
 app.use('/gas', gasRouter);
 app.use('/electronics', electronicsRouter);
 app.use('/services', servicesRouter);
-
+app.use('/contact', contactRouter);
+app.use('/about', aboutRouter);
+app.use('/team', teamRouter);
 
 //Users
 app.post('/customer', async (req, res) => {
